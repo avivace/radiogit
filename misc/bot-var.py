@@ -1,3 +1,8 @@
+from telegram.ext import Updater, CommandHandler, Job
+from telegram import ParseMode
+from random import randint
+import logging, sqlite3, urllib, json, urllib2, requests, requests_cache
+
 def sub(bot, update):
     logging.warning(str(update.message.chat_id) + " sub")
     conn = sqlite3.connect(db_file)
