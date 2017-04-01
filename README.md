@@ -14,6 +14,7 @@ A public instance of the bot is online at [@radiogit_bot](https://t.me/radiogit_
 ## Install
 ### Webhook Listener
 **Dependencies**: Node.js (Express 4, body-parser)
+
 Edit the port/webserver configuration and run `node index.js` (you may find useful setting up a reverse proxy). Make sure it's accessible and accepting POST requests, the URL will be the *Payload URL* when setting up the actual webhook in GitHub repository settings.
 
 You can test the listener with `curl` with something like this: 
@@ -24,11 +25,14 @@ Assuming `payload.json` is something like [this](https://developer.github.com/v3
 
 ### The actual bot
 **Dependencies**: python3 (telegram, sqlite3).
+
 Insert your bot token and run the bot with `python bot.py`
 
 ## Usage
 When everything is ready, talk to the bot.
-If the repository url is https://github.com/RepoOwner/RepoName, send `/sub RepoOwner/RepoName` to set up event subscription. Adding the bot to a group and senting `/sub` commands from it will make events sent to the group.
+If the repository url is https://github.com/RepoOwner/RepoName, send `/sub RepoOwner/RepoName` to set up event subscription.
+
+Works in groups, too.
 
 ## TODO
 - Support other types of events (currently supporting only commit events, as POC);
